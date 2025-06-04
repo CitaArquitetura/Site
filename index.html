@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cità Arquitetura</title>
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/9fDggrcM/logo-nome.png"> <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/9fDggrcM/logo-nome.png">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -18,7 +19,6 @@
             background: linear-gradient(45deg, #EDEDED, #F5F5F5, #D8D2CE, #A1958C);
             background-size: 300% 300%;
             animation: backgroundGradient 25s ease infinite;
-            /* Removido overflow: hidden; daqui para permitir rolagem no mobile */
         }
 
         @keyframes backgroundGradient {
@@ -33,9 +33,11 @@
             max-width: 500px;
             height: 870px;
             border-radius: 1rem;
-            overflow: hidden; /* Mantém o overflow hidden para o card principal */
+            overflow: hidden;
             box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.15);
+            margin-top: 0.5rem; /* Ajuste mais sutil para mover o card um pouquinho para baixo */
         }
+
         .header-image {
             position: absolute;
             top: 0;
@@ -47,6 +49,7 @@
             background-position: center top;
             z-index: 2;
         }
+
         .new-profile-pic {
             position: absolute;
             top: 305px;
@@ -70,6 +73,7 @@
             background: linear-gradient(to top, #EDEDED 0%, #F5F5F5 100%);
             z-index: 1;
         }
+
         .logo-nome {
             position: absolute;
             top: 430px;
@@ -83,6 +87,7 @@
             background-position: center;
             z-index: 5;
         }
+
         .button {
             background-color: #A1958C;
             color: white;
@@ -122,12 +127,12 @@
             border-radius: 1rem;
             box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
             padding: 2rem;
-            overflow-y: auto; /* Permite rolagem dentro do card de formulário */
+            overflow-y: auto;
             z-index: 999;
             display: none;
             flex-direction: column;
             gap: 1.5rem;
-            animation: slideIn 0.3s forwards; /* Animação de entrada */
+            animation: slideIn 0.3s forwards;
         }
 
         .question-card h3 {
@@ -144,9 +149,11 @@
             font-size: 0.9rem;
             color: #4A4A4A;
         }
+
         .question-card .contact-input {
             margin-bottom: 1rem;
         }
+
         .question-card .contact-input input {
             border: 1px solid #D0D0D0;
             border-radius: 0.5rem;
@@ -203,6 +210,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         .question-card .submit-button:hover {
             background-color: #8C827A;
         }
@@ -237,7 +245,6 @@
             z-index: 2;
         }
 
-        /* Novas regras para o overlay de sucesso */
         #successOverlay {
             position: fixed;
             top: 0;
@@ -253,7 +260,6 @@
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
-            /* Permite rolagem no overlay de sucesso em telas menores */
             overflow-y: auto;
         }
 
@@ -284,7 +290,7 @@
 
         #successOverlay .success-icon {
             font-size: 4rem;
-            color: #d4edda; /* Um verde claro para o ícone de sucesso */
+            color: #d4edda;
             animation: bounceIn 0.6s forwards;
         }
 
@@ -308,7 +314,6 @@
             color: #8C827A;
         }
 
-        /* Animações */
         @keyframes slideIn {
             from { transform: translateY(100%); }
             to { transform: translateY(0); }
@@ -331,10 +336,9 @@
             100% { transform: scale(1); }
         }
 
-        /* Media Query para telas maiores, para manter o comportamento desktop */
-        @media (min-width: 768px) { /* Exemplo: aplica a partir de tablets */
+        @media (min-width: 768px) {
             body {
-                overflow: hidden; /* Aplica overflow: hidden apenas para telas maiores */
+                overflow: hidden;
             }
         }
     </style>
@@ -348,7 +352,7 @@
         <div class="bottom-left-image"></div>
         <div class="bottom-right-image"></div>
         
-        <div class="relative z-20 flex flex-col items-center justify-start h-full p-6 **pt-25** pb-12">
+        <div class="relative z-20 flex flex-col items-center justify-start h-full p-6 pt-16 pb-12">
             <div class="w-full space-y-3 mt-auto">
                 <a href="https://wa.me/5551993258399" target="_blank" class="button">WHATSAPP</a>
                 <a href="mailto:contato@citaarquitetura.com.br" target="_blank" class="button">E-MAIL</a>
@@ -359,7 +363,7 @@
         <div id="projectCard" class="question-card">
             <button class="close-button" onclick="closeCard('projectCard')">×</button>
             <h2 class="card-title">Projeto</h2>
-            <form action="https://formspree.io/f/myzjzgkb" method="POST" data-form-type="projeto">
+            <form action="https://formspree.io/f/xpwrwpzo" method="POST" data-form-type="projeto">
                 <input type="hidden" name="Tipo" value="Orçamento para Projeto">
                 <div class="contact-input">
                     <label for="nomeProjeto">Nome:</label>
@@ -418,7 +422,7 @@
         <div id="consultoriaCard" class="question-card">
             <button class="close-button" onclick="closeCard('consultoriaCard')">×</button>
             <h2 class="card-title">Consultoria</h2>
-            <form action="https://formspree.io/f/myzjzgkb" method="POST" data-form-type="consultoria">
+            <form action="https://formspree.io/f/xpwrwpzo" method="POST" data-form-type="consultoria">
                 <input type="hidden" name="Tipo" value="Orçamento para Consultoria">
                 <div class="contact-input">
                     <label for="nomeConsultoria">Nome:</label>
@@ -481,13 +485,13 @@
 
     <div id="successOverlay">
         <div class="success-content">
-            <span class="success-icon">&#10003;</span> <p class="success-message">Mensagem enviada com sucesso!</p>
+            <span class="success-icon">✓</span>
+            <p class="success-message">Mensagem enviada com sucesso!</p>
             <button class="close-overlay-button" onclick="hideSuccessOverlay()">Fechar</button>
         </div>
     </div>
 
     <script>
-        // Função para ativar/desativar campos "Outro"
         function toggleOutro(inputId, radioOrCheckbox) {
             const input = document.getElementById(inputId);
             input.disabled = !radioOrCheckbox.checked;
@@ -496,12 +500,10 @@
             }
         }
 
-        // Função para fechar os cards de formulário
         function closeCard(cardId) {
             document.getElementById(cardId).classList.remove('show-card');
         }
 
-        // Controle de visibilidade dos cards
         document.getElementById('projetoButton').addEventListener('click', function(event) {
             event.preventDefault();
             document.getElementById('projectCard').classList.add('show-card');
@@ -514,29 +516,24 @@
             document.getElementById('projectCard').classList.remove('show-card');
         });
 
-        // Função para mostrar o overlay de sucesso
         function showSuccessOverlay() {
             const overlay = document.getElementById('successOverlay');
             const successContent = overlay.querySelector('.success-content');
-            
             overlay.classList.add('show-overlay');
-            successContent.classList.remove('hide-content'); // Garante que a animação de entrada seja aplicada
+            successContent.classList.remove('hide-content');
         }
 
-        // Função para esconder o overlay de sucesso
         function hideSuccessOverlay() {
             const overlay = document.getElementById('successOverlay');
             const successContent = overlay.querySelector('.success-content');
-
-            successContent.classList.add('hide-content'); // Ativa a animação de saída
+            successContent.classList.add('hide-content');
             successContent.addEventListener('animationend', function handler() {
                 overlay.classList.remove('show-overlay');
-                successContent.classList.remove('hide-content'); // Remove a classe para futuras exibições
+                successContent.classList.remove('hide-content');
                 successContent.removeEventListener('animationend', handler);
             });
         }
 
-        // Envio via AJAX para feedback ao usuário
         document.querySelectorAll('.question-card form').forEach(form => {
             form.addEventListener('submit', function(event) {
                 event.preventDefault();
@@ -550,7 +547,7 @@
                 })
                 .then(response => {
                     if (response.ok) {
-                        showSuccessOverlay(); // Exibe o overlay de sucesso
+                        showSuccessOverlay();
                         form.reset();
                         form.closest('.question-card').classList.remove('show-card');
                     } else {
