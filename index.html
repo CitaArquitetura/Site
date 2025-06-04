@@ -18,7 +18,7 @@
             background: linear-gradient(45deg, #EDEDED, #F5F5F5, #D8D2CE, #A1958C);
             background-size: 300% 300%;
             animation: backgroundGradient 25s ease infinite;
-            overflow: hidden; /* Evita scroll quando o overlay estiver ativo */
+            /* Removido overflow: hidden; daqui para permitir rolagem no mobile */
         }
 
         @keyframes backgroundGradient {
@@ -33,7 +33,7 @@
             max-width: 500px;
             height: 870px;
             border-radius: 1rem;
-            overflow: hidden;
+            overflow: hidden; /* Mantém o overflow hidden para o card principal */
             box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.15);
         }
         .header-image {
@@ -122,7 +122,7 @@
             border-radius: 1rem;
             box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
             padding: 2rem;
-            overflow-y: auto;
+            overflow-y: auto; /* Permite rolagem dentro do card de formulário */
             z-index: 999;
             display: none;
             flex-direction: column;
@@ -253,6 +253,8 @@
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
+            /* Permite rolagem no overlay de sucesso em telas menores */
+            overflow-y: auto;
         }
 
         #successOverlay.show-overlay {
@@ -327,6 +329,13 @@
             50% { transform: scale(1.2); opacity: 1; }
             70% { transform: scale(0.9); }
             100% { transform: scale(1); }
+        }
+
+        /* Media Query para telas maiores, para manter o comportamento desktop */
+        @media (min-width: 768px) { /* Exemplo: aplica a partir de tablets */
+            body {
+                overflow: hidden; /* Aplica overflow: hidden apenas para telas maiores */
+            }
         }
     </style>
 </head>
